@@ -50,7 +50,7 @@
 	}
 
 	.logo {
-		height: 32px;
+		height: 36px;
 		width: auto;
 	}
 
@@ -60,11 +60,15 @@
 	}
 
 	.nav-link {
-		padding: var(--space-xs) var(--space-md);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: var(--space-sm) var(--space-md);
 		border-radius: var(--radius-full);
 		color: var(--color-text-on-primary);
 		font-weight: 500;
-		font-size: var(--text-sm);
+		font-size: var(--text-base);
+		line-height: 1;
 		transition: background var(--transition-fast);
 	}
 
