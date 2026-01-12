@@ -1,29 +1,30 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 
 	let currentPath = $derived($page.url.pathname);
 </script>
 
 <header class="header">
-	<a href="/" class="logo-link" aria-label="Rust Nation UK Home">
-		<img src="/Logo.svg" alt="Rust Nation UK" class="logo" />
+	<a href="{base}/" class="logo-link" aria-label="Rust Nation UK Home">
+		<img src="{base}/Logo.svg" alt="Rust Nation UK" class="logo" />
 	</a>
 
-	{#if currentPath !== '/'}
+	{#if currentPath !== `${base}/` && currentPath !== base}
 		<nav class="nav" aria-label="Main navigation">
 			<a
-				href="/schedule"
+				href="{base}/schedule"
 				class="nav-link"
-				class:active={currentPath === '/schedule'}
-				aria-current={currentPath === '/schedule' ? 'page' : undefined}
+				class:active={currentPath === `${base}/schedule`}
+				aria-current={currentPath === `${base}/schedule` ? 'page' : undefined}
 			>
 				Schedule
 			</a>
 			<a
-				href="/sponsors"
+				href="{base}/sponsors"
 				class="nav-link"
-				class:active={currentPath === '/sponsors'}
-				aria-current={currentPath === '/sponsors' ? 'page' : undefined}
+				class:active={currentPath === `${base}/sponsors`}
+				aria-current={currentPath === `${base}/sponsors` ? 'page' : undefined}
 			>
 				Sponsors
 			</a>

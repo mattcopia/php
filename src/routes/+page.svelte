@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -7,12 +8,12 @@
 
 <div class="landing">
 	<div class="hero">
-		<img src="/Logo.svg" alt="Rust Nation UK" class="hero-logo" />
+		<img src="{base}/Logo.svg" alt="Rust Nation UK" class="hero-logo" />
 		<p class="hero-tagline">The UK's premier Rust conference</p>
 	</div>
 
 	<nav class="landing-nav" aria-label="Main sections">
-		<a href="/schedule" class="landing-card landing-card--schedule">
+		<a href="{base}/schedule" class="landing-card landing-card--schedule">
 			<div class="card-icon" aria-hidden="true">
 				<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 					<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
@@ -25,7 +26,7 @@
 			<p class="card-description">Browse talks, workshops, and keynotes across 4 tracks</p>
 		</a>
 
-		<a href="/sponsors" class="landing-card landing-card--sponsors">
+		<a href="{base}/sponsors" class="landing-card landing-card--sponsors">
 			<div class="card-icon" aria-hidden="true">
 				<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 					<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
