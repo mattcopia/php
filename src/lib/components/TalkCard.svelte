@@ -22,9 +22,10 @@
 
 	interface Props {
 		talk: Talk;
+		trackName?: string;
 	}
 
-	let { talk }: Props = $props();
+	let { talk, trackName }: Props = $props();
 	let expanded = $state(false);
 
 	function toggleExpanded() {
@@ -57,7 +58,12 @@
 
 	<div class="talk-content">
 		<div class="talk-header">
-			<Tag type={talk.tag} />
+			<div class="talk-meta">
+				<Tag type={talk.tag} />
+				{#if trackName}
+					<span class="track-badge">{trackName}</span>
+				{/if}
+			</div>
 			<h3 class="talk-title">{talk.title}</h3>
 			<p class="speaker-name">{talk.speaker}</p>
 		</div>
@@ -188,6 +194,22 @@
 		flex-direction: column;
 		align-items: flex-start;
 		gap: var(--space-xs);
+	}
+
+	.talk-meta {
+		display: flex;
+		align-items: center;
+		gap: var(--space-sm);
+		flex-wrap: wrap;
+	}
+
+	.track-badge {
+		padding: 2px var(--space-sm);
+		background: var(--color-gray-100);
+		border-radius: var(--radius-sm);
+		font-size: var(--text-xs);
+		font-weight: 500;
+		color: var(--color-gray-600);
 	}
 
 	.talk-title {

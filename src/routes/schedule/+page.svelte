@@ -45,9 +45,16 @@
 		data: Talk | BreakItem;
 	}
 
-	function getScheduleForTrack(trackId: number, query: string, tags: string[]): ScheduleItem[] {
-		let talks = (scheduleData.talks as Talk[])
-			.filter((talk) => talk.track === trackId);
+	// Check if search/filter is active
+	let isFiltering = $derived(searchQuery.trim() !== '' || selectedTags.length > 0);
+
+	function getScheduleForTrack(trackId: number | null, query: string, tags: string[]): ScheduleItem[] {
+		let talks = (scheduleData.talks as Talk[]);
+
+		// If not filtering, only show selected track
+		if (trackId !== null) {
+			talks = talks.filter((talk) => talk.track === trackId);
+		}
 
 		// Apply search filter
 		if (query.trim()) {
@@ -66,7 +73,7 @@
 		const talkItems = talks.map((talk) => ({ type: 'talk' as const, time: talk.time, data: talk }));
 
 		// Only show breaks if no search/filter active
-		const breaks = (query.trim() || tags.length > 0) ? [] : (scheduleData.breaks as BreakItem[]).map((b) => ({
+		const breaks = (trackId === null) ? [] : (scheduleData.breaks as BreakItem[]).map((b) => ({
 			type: 'break' as const,
 			time: b.time,
 			data: b
@@ -78,7 +85,14 @@
 		return combined;
 	}
 
-	let schedule = $derived(getScheduleForTrack(selectedTrack, searchQuery, selectedTags));
+	// Get track name by ID
+	function getTrackName(trackId: number): string {
+		const track = scheduleData.tracks.find(t => t.id === trackId);
+		return track?.name || '';
+	}
+
+	// When filtering, search all tracks (pass null); otherwise use selected track
+	let schedule = $derived(getScheduleForTrack(isFiltering ? null : selectedTrack, searchQuery, selectedTags));
 
 	function handleTrackSelect(trackId: number) {
 		selectedTrack = trackId;
@@ -196,7 +210,10 @@
 			<div class="schedule-list">
 				{#each schedule as item (item.type === 'talk' ? (item.data as Talk).id : item.time)}
 					{#if item.type === 'talk'}
-						<TalkCard talk={item.data as Talk} />
+						<TalkCard
+							talk={item.data as Talk}
+							trackName={isFiltering ? getTrackName((item.data as Talk).track) : undefined}
+						/>
 					{:else}
 						<BreakCard breakItem={item.data as BreakItem} />
 					{/if}
