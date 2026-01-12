@@ -37,7 +37,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: var(--space-sm) var(--space-md);
+		padding: var(--space-md) var(--space-lg);
 		background:
 			linear-gradient(135deg, transparent 75%, rgba(132, 26, 242, 0.4) 75%, rgba(132, 26, 242, 0.4) 85%, transparent 85%),
 			linear-gradient(180deg, #780AE9 0%, #7408E3 100%);
@@ -50,21 +50,21 @@
 	}
 
 	.logo {
-		height: 24px;
+		height: 32px;
 		width: auto;
 	}
 
 	.nav {
 		display: flex;
-		gap: var(--space-xs);
+		gap: var(--space-sm);
 	}
 
 	.nav-link {
-		padding: 4px var(--space-sm);
+		padding: var(--space-xs) var(--space-md);
 		border-radius: var(--radius-full);
 		color: var(--color-text-on-primary);
 		font-weight: 500;
-		font-size: var(--text-xs);
+		font-size: var(--text-sm);
 		transition: background var(--transition-fast);
 	}
 
