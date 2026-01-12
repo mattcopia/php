@@ -23,9 +23,10 @@
 	interface Props {
 		talk: Talk;
 		trackName?: string;
+		isNow?: boolean;
 	}
 
-	let { talk, trackName }: Props = $props();
+	let { talk, trackName, isNow = false }: Props = $props();
 	let expanded = $state(false);
 
 	function toggleExpanded() {
@@ -42,11 +43,17 @@
 	}
 </script>
 
-<article class="talk-card">
+<article class="talk-card" class:is-now={isNow}>
 	<div class="talk-left">
 		<div class="talk-time">
 			<span class="time">{talk.time}</span>
 			<span class="duration">{formatDuration(talk.duration)}</span>
+			{#if isNow}
+				<span class="now-badge">
+					<span class="now-dot"></span>
+					LIVE
+				</span>
+			{/if}
 		</div>
 		<img
 			src={talk.speakerPhoto}
@@ -149,6 +156,11 @@
 		background: var(--color-surface);
 		border-radius: var(--radius-lg);
 		box-shadow: var(--shadow-sm);
+		transition: box-shadow var(--transition-fast);
+	}
+
+	.talk-card.is-now {
+		box-shadow: 0 0 0 2px var(--color-red), var(--shadow-md);
 	}
 
 	.talk-left {
@@ -174,6 +186,37 @@
 	.duration {
 		font-size: var(--text-xs);
 		color: var(--color-text-muted);
+	}
+
+	.now-badge {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+		margin-top: 4px;
+		padding: 2px 6px;
+		background: var(--color-red);
+		border-radius: var(--radius-sm);
+		font-size: 10px;
+		font-weight: 700;
+		color: var(--color-white);
+		letter-spacing: 0.05em;
+	}
+
+	.now-dot {
+		width: 6px;
+		height: 6px;
+		background: var(--color-white);
+		border-radius: 50%;
+		animation: pulse-dot 1.5s ease-in-out infinite;
+	}
+
+	@keyframes pulse-dot {
+		0%, 100% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 0.4;
+		}
 	}
 
 	.speaker-photo {

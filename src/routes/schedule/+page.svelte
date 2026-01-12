@@ -11,8 +11,31 @@
 	let searchQuery = $state('');
 	let selectedTags = $state<string[]>([]);
 	let isLoading = $state(true);
+	let currentTime = $state(new Date());
 
 	const allTags = ['keynote', 'talk', 'tutorial'];
+
+	// Update current time every minute for "happening now" feature
+	onMount(() => {
+		const interval = setInterval(() => {
+			currentTime = new Date();
+		}, 60000);
+		return () => clearInterval(interval);
+	});
+
+	// Check if a talk is happening now
+	function isTalkNow(talk: Talk): boolean {
+		const now = currentTime;
+		const [hours, minutes] = talk.time.split(':').map(Number);
+
+		const talkStart = new Date(now);
+		talkStart.setHours(hours, minutes, 0, 0);
+
+		const talkEnd = new Date(talkStart);
+		talkEnd.setMinutes(talkEnd.getMinutes() + talk.duration);
+
+		return now >= talkStart && now < talkEnd;
+	}
 
 	interface Talk {
 		id: number;
@@ -205,6 +228,7 @@
 						<TalkCard
 							talk={item.data as Talk}
 							trackName={isFiltering ? getTrackName((item.data as Talk).track) : undefined}
+							isNow={isTalkNow(item.data as Talk)}
 						/>
 					{:else}
 						<BreakCard breakItem={item.data as BreakItem} />
