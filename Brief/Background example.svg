@@ -1,0 +1,21 @@
+<svg width="720" height="1280" viewBox="0 0 720 1280" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_3332_30)">
+<rect width="1280" height="720" transform="translate(5.59506e-05 1280) rotate(-90)" fill="white"/>
+<g clip-path="url(#clip1_3332_30)">
+<path d="M-94.272 1312L833.412 1312L833.412 -9.05981e-05L-94.2722 -9.49736e-06L-94.272 1312Z" fill="#780AE9"/>
+<path d="M833.412 1312L-94.2721 3.61264e-05L833.412 -4.49743e-05L833.412 1312Z" fill="#841AF2"/>
+<path d="M833.412 643.085L378.695 -4.70313e-05L833.412 -8.6784e-05L833.412 643.085Z" fill="#7408E3"/>
+<path d="M833.412 221.82L676.572 -4.67065e-05L833.412 -6.04179e-05L833.412 221.82Z" fill="#780AE9"/>
+<path d="M-94.272 1312L833.412 1312L369.57 656.007L-94.272 1312Z" fill="#7408E3"/>
+<path d="M196.857 1312L542.284 1312L369.57 1067.74L196.857 1312Z" fill="#780AE9"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3332_30">
+<rect width="1280" height="720" fill="white" transform="translate(5.59506e-05 1280) rotate(-90)"/>
+</clipPath>
+<clipPath id="clip1_3332_30">
+<rect width="927.685" height="1312" fill="white" transform="translate(833.412 1312) rotate(180)"/>
+</clipPath>
+</defs>
+</svg>

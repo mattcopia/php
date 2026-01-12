@@ -1,0 +1,100 @@
+{
+  "sponsors": [
+    {
+      "id": 1,
+      "name": "Ferrous Systems",
+      "tier": "platinum",
+      "logo": "https://placehold.co/300x100/780AE9/FFFFFF?text=Ferrous+Systems",
+      "website": "https://ferrous-systems.com",
+      "bio": "Ferrous Systems is a Rust consultancy founded by members of the Rust project. We offer training, consulting, and development services to help teams adopt Rust successfully. Our mission is to make Rust accessible to everyone."
+    },
+    {
+      "id": 2,
+      "name": "AWS",
+      "tier": "platinum",
+      "logo": "https://placehold.co/300x100/FF9900/000000?text=AWS",
+      "website": "https://aws.amazon.com",
+      "bio": "Amazon Web Services is proud to support the Rust community. Rust powers critical infrastructure across AWS, from Firecracker to Lambda. We're committed to advancing the Rust ecosystem and hiring talented Rustaceans."
+    },
+    {
+      "id": 3,
+      "name": "Microsoft",
+      "tier": "platinum",
+      "logo": "https://placehold.co/300x100/00A4EF/FFFFFF?text=Microsoft",
+      "website": "https://microsoft.com",
+      "bio": "Microsoft is investing in Rust for systems programming across Windows and Azure. We believe Rust's safety guarantees are essential for building secure, reliable software at scale."
+    },
+    {
+      "id": 4,
+      "name": "Google",
+      "tier": "gold",
+      "logo": "https://placehold.co/300x100/4285F4/FFFFFF?text=Google",
+      "website": "https://google.com",
+      "bio": "Google supports Rust development in Android, Fuchsia, and other projects. We're excited about Rust's potential to eliminate entire classes of security vulnerabilities."
+    },
+    {
+      "id": 5,
+      "name": "Cloudflare",
+      "tier": "gold",
+      "logo": "https://placehold.co/300x100/F38020/FFFFFF?text=Cloudflare",
+      "website": "https://cloudflare.com",
+      "bio": "Cloudflare uses Rust extensively in our edge network and security products. Rust helps us build fast, safe code that protects millions of websites worldwide."
+    },
+    {
+      "id": 6,
+      "name": "1Password",
+      "tier": "gold",
+      "logo": "https://placehold.co/300x100/0094F5/FFFFFF?text=1Password",
+      "website": "https://1password.com",
+      "bio": "1Password rebuilt our core cryptographic libraries in Rust for maximum security and performance. We're proud supporters of the Rust community and active contributors to the ecosystem."
+    },
+    {
+      "id": 7,
+      "name": "JetBrains",
+      "tier": "silver",
+      "logo": "https://placehold.co/300x100/000000/FFFFFF?text=JetBrains",
+      "website": "https://jetbrains.com/rust",
+      "bio": "JetBrains develops RustRover, a powerful IDE for Rust development. We're committed to making Rust development productive and enjoyable for developers everywhere."
+    },
+    {
+      "id": 8,
+      "name": "Oxide Computer",
+      "tier": "silver",
+      "logo": "https://placehold.co/300x100/48D597/000000?text=Oxide",
+      "website": "https://oxide.computer",
+      "bio": "Oxide Computer Company is building the cloud computer, with Rust at the core. From firmware to control plane, Rust enables us to build reliable, maintainable infrastructure."
+    },
+    {
+      "id": 9,
+      "name": "Embark Studios",
+      "tier": "silver",
+      "logo": "https://placehold.co/300x100/1A1A2E/FFFFFF?text=Embark",
+      "website": "https://embark-studios.com",
+      "bio": "Embark Studios uses Rust for game development and has open-sourced numerous Rust crates. We believe Rust is the future of game engine development."
+    },
+    {
+      "id": 10,
+      "name": "Sentry",
+      "tier": "bronze",
+      "logo": "https://placehold.co/300x100/362D59/FFFFFF?text=Sentry",
+      "website": "https://sentry.io",
+      "bio": "Sentry provides error monitoring for Rust applications. Our Rust SDK helps developers track and fix issues in production Rust services."
+    },
+    {
+      "id": 11,
+      "name": "Shuttle",
+      "tier": "bronze",
+      "logo": "https://placehold.co/300x100/F25C00/FFFFFF?text=Shuttle",
+      "website": "https://shuttle.rs",
+      "bio": "Shuttle is a Rust-native cloud platform that makes deploying Rust backends simple. Write Rust, deploy with a single command, and scale effortlessly."
+    },
+    {
+      "id": 12,
+      "name": "Tauri",
+      "tier": "bronze",
+      "logo": "https://placehold.co/300x100/FFC131/000000?text=Tauri",
+      "website": "https://tauri.app",
+      "bio": "Tauri enables developers to build desktop applications with web frontends and Rust backends. Smaller, faster, and more secure than alternatives."
+    }
+  ]
+}

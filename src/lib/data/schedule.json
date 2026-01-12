@@ -1,0 +1,235 @@
+{
+  "tracks": [
+    { "id": 1, "name": "Main Stage" },
+    { "id": 2, "name": "Workshop Room A" },
+    { "id": 3, "name": "Workshop Room B" },
+    { "id": 4, "name": "Community Track" }
+  ],
+  "breaks": [
+    { "time": "10:30", "duration": 30, "type": "coffee", "label": "Coffee Break" },
+    { "time": "12:30", "duration": 60, "type": "lunch", "label": "Lunch" },
+    { "time": "15:30", "duration": 30, "type": "coffee", "label": "Afternoon Tea" }
+  ],
+  "talks": [
+    {
+      "id": 1,
+      "track": 1,
+      "time": "09:00",
+      "duration": 60,
+      "title": "Opening Keynote: The Future of Rust",
+      "speaker": "Ashley Williams",
+      "speakerPhoto": "https://ui-avatars.com/api/?name=Ashley+Williams&background=F94B4F&color=fff&size=200",
+      "synopsis": "Join us for an exciting look at where Rust is headed in 2026 and beyond. We'll explore the latest language features, the growing ecosystem, and how Rust is reshaping systems programming across industries from embedded devices to cloud infrastructure.",
+      "tag": "keynote",
+      "social": {
+        "twitter": "ag_dubs",
+        "github": "ashleygwilliams",
+        "website": "https://ashley.is"
+      }
+    },
+    {
+      "id": 2,
+      "track": 1,
+      "time": "11:00",
+      "duration": 45,
+      "title": "Zero-Cost Abstractions in Practice",
+      "speaker": "Niko Matsakis",
+      "speakerPhoto": "https://ui-avatars.com/api/?name=Niko+Matsakis&background=5153ED&color=fff&size=200",
+      "synopsis": "Dive deep into how Rust achieves its famous zero-cost abstractions. Through practical examples and compiler insights, learn how to write high-level code that compiles down to optimal machine code.",
+      "tag": "talk",
+      "social": {
+        "twitter": "nikomatsakis",
+        "github": "nikomatsakis"
+      }
+    },
+    {
+      "id": 3,
+      "track": 2,
+      "time": "11:00",
+      "duration": 90,
+      "title": "Building Your First Async Runtime",
+      "speaker": "Alice Ryhl",
+      "speakerPhoto": "https://ui-avatars.com/api/?name=Alice+Ryhl&background=00BB74&color=fff&size=200",
+      "synopsis": "A hands-on workshop where we'll build a minimal async runtime from scratch. You'll gain deep understanding of how futures, wakers, and executors work together to power async Rust.",
+      "tag": "tutorial",
+      "social": {
+        "github": "Darksonn"
+      }
+    },
+    {
+      "id": 4,
+      "track": 3,
+      "time": "11:00",
+      "duration": 90,
+      "title": "WebAssembly with Rust: From Zero to Hero",
+      "speaker": "Steve Klabnik",
+      "speakerPhoto": "https://ui-avatars.com/api/?name=Steve+Klabnik&background=EF82EB&color=fff&size=200",
+      "synopsis": "Learn how to compile Rust to WebAssembly and integrate it into web applications. We'll cover wasm-bindgen, wasm-pack, and build a real-world interactive demo.",
+      "tag": "tutorial",
+      "social": {
+        "twitter": "steveklabnik",
+        "github": "steveklabnik",
+        "website": "https://steveklabnik.com"
+      }
+    },
+    {
+      "id": 5,
+      "track": 4,
+      "time": "11:00",
+      "duration": 45,
+      "title": "Growing the Rust Community",
+      "speaker": "Manish Goregaokar",
+      "speakerPhoto": "https://ui-avatars.com/api/?name=Manish+Goregaokar&background=FEDB30&color=000&size=200",
+      "synopsis": "Explore strategies for building inclusive Rust communities worldwide. From meetups to conferences, learn how to foster welcoming spaces for Rustaceans of all skill levels.",
+      "tag": "talk",
+      "social": {
+        "twitter": "ManishEarth",
+        "github": "Manishearth"
+      }
+    },
+    {
+      "id": 6,
+      "track": 1,
+      "time": "13:30",
+      "duration": 45,
+      "title": "Error Handling Done Right",
+      "speaker": "Jane Lusby",
+      "speakerPhoto": "https://ui-avatars.com/api/?name=Jane+Lusby&background=F94B4F&color=fff&size=200",
+      "synopsis": "A comprehensive guide to error handling in Rust. We'll compare different approaches, explore the anyhow and thiserror crates, and establish best practices for library and application code.",
+      "tag": "talk",
+      "social": {
+        "twitter": "yaaborern",
+        "github": "yaahc"
+      }
+    },
+    {
+      "id": 7,
+      "track": 2,
+      "time": "13:30",
+      "duration": 90,
+      "title": "Building CLI Tools with Clap",
+      "speaker": "Ed Page",
+      "speakerPhoto": "https://ui-avatars.com/api/?name=Ed+Page&background=5153ED&color=fff&size=200",
+      "synopsis": "Hands-on workshop building professional command-line tools using Clap. Learn about argument parsing, subcommands, shell completions, and creating delightful CLI experiences.",
+      "tag": "tutorial",
+      "social": {
+        "github": "epage"
+      }
+    },
+    {
+      "id": 8,
+      "track": 3,
+      "time": "13:30",
+      "duration": 90,
+      "title": "Embedded Rust: Programming Microcontrollers",
+      "speaker": "James Munns",
+      "speakerPhoto": "https://ui-avatars.com/api/?name=James+Munns&background=00BB74&color=fff&size=200",
+      "synopsis": "Get started with embedded Rust! We'll program real hardware, explore the embedded ecosystem, and learn how Rust's safety guarantees help prevent common embedded bugs.",
+      "tag": "tutorial",
+      "social": {
+        "twitter": "bitshiftmask",
+        "github": "jamesmunns"
+      }
+    },
+    {
+      "id": 9,
+      "track": 4,
+      "time": "13:30",
+      "duration": 45,
+      "title": "Rust in Production: Lessons Learned",
+      "speaker": "Sean Chen",
+      "speakerPhoto": "https://ui-avatars.com/api/?name=Sean+Chen&background=EF82EB&color=fff&size=200",
+      "synopsis": "Real-world experiences deploying Rust at scale. Learn about the challenges, victories, and practical tips from running Rust services handling millions of requests.",
+      "tag": "talk",
+      "social": {
+        "github": "seanchen1991"
+      }
+    },
+    {
+      "id": 10,
+      "track": 1,
+      "time": "14:30",
+      "duration": 45,
+      "title": "The Borrow Checker: Friend Not Foe",
+      "speaker": "Nell Shamrell-Harrington",
+      "speakerPhoto": "https://ui-avatars.com/api/?name=Nell+Shamrell&background=FEDB30&color=000&size=200",
+      "synopsis": "Transform your relationship with the borrow checker. Through mental models and practical patterns, learn to work with Rust's ownership system rather than against it.",
+      "tag": "talk",
+      "social": {
+        "twitter": "naborber",
+        "github": "nellshamrell"
+      }
+    },
+    {
+      "id": 11,
+      "track": 4,
+      "time": "14:30",
+      "duration": 45,
+      "title": "Contributing to the Rust Compiler",
+      "speaker": "Felix Klock",
+      "speakerPhoto": "https://ui-avatars.com/api/?name=Felix+Klock&background=F94B4F&color=fff&size=200",
+      "synopsis": "A beginner-friendly introduction to contributing to rustc. We'll navigate the codebase, find good first issues, and walk through the contribution process.",
+      "tag": "talk",
+      "social": {
+        "twitter": "paborner",
+        "github": "pnkfelix"
+      }
+    },
+    {
+      "id": 12,
+      "track": 1,
+      "time": "16:00",
+      "duration": 60,
+      "title": "Closing Keynote: Rust's Next Decade",
+      "speaker": "Josh Triplett",
+      "speakerPhoto": "https://ui-avatars.com/api/?name=Josh+Triplett&background=5153ED&color=fff&size=200",
+      "synopsis": "Reflecting on how far Rust has come and looking ahead to the next ten years. What challenges remain? What new frontiers will Rust explore? Join us for an inspiring close to Rust Nation UK.",
+      "tag": "keynote",
+      "social": {
+        "twitter": "joshtriplett",
+        "github": "joshtriplett"
+      }
+    },
+    {
+      "id": 13,
+      "track": 2,
+      "time": "16:00",
+      "duration": 60,
+      "title": "Advanced Traits and Generics",
+      "speaker": "Predrag Gruevski",
+      "speakerPhoto": "https://ui-avatars.com/api/?name=Predrag+Gruevski&background=00BB74&color=fff&size=200",
+      "synopsis": "Master advanced trait patterns including associated types, GATs, and trait objects. Learn when to use each approach and how to design flexible, reusable APIs.",
+      "tag": "talk",
+      "social": {
+        "twitter": "predaborner",
+        "github": "obi1kenobi"
+      }
+    },
+    {
+      "id": 14,
+      "track": 3,
+      "time": "16:00",
+      "duration": 60,
+      "title": "Optimizing Rust Performance",
+      "speaker": "Nicholas Nethercote",
+      "speakerPhoto": "https://ui-avatars.com/api/?name=Nicholas+Nethercote&background=EF82EB&color=fff&size=200",
+      "synopsis": "Deep dive into Rust performance optimization. Learn profiling techniques, understand what the compiler does, and discover patterns that help or hurt performance.",
+      "tag": "talk",
+      "social": {
+        "github": "nnethercote"
+      }
+    },
+    {
+      "id": 15,
+      "track": 4,
+      "time": "16:00",
+      "duration": 60,
+      "title": "Lightning Talks",
+      "speaker": "Various Speakers",
+      "speakerPhoto": "https://ui-avatars.com/api/?name=Lightning+Talks&background=FEDB30&color=000&size=200",
+      "synopsis": "A rapid-fire session of 5-minute talks from community members covering everything from hobby projects to production war stories. Always surprising, always fun!",
+      "tag": "talk",
+      "social": {}
+    }
+  ]
+}
