@@ -146,8 +146,8 @@
 
 				<button
 					class="close-btn"
-					onclick={(e) => { e.stopPropagation(); dismissAll(); }}
-					aria-label="Dismiss sponsor messages"
+					onclick={(e) => { e.stopPropagation(); hideAd(); }}
+					aria-label="Close"
 				>
 					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 						<path d="M18 6L6 18M6 6l12 12"/>
@@ -202,10 +202,6 @@
 						</svg>
 					</a>
 				</div>
-
-				<button class="modal-dismiss" onclick={dismissAll}>
-					Don't show sponsor messages
-				</button>
 			</div>
 		</div>
 	{/if}
@@ -470,21 +466,6 @@
 	.modal-cta:hover,
 	.modal-cta:focus-visible {
 		background: var(--color-primary-dark);
-	}
-
-	.modal-dismiss {
-		width: 100%;
-		padding: var(--space-md);
-		border-top: 1px solid var(--color-gray-200);
-		color: var(--color-text-muted);
-		font-size: var(--text-sm);
-		transition: all var(--transition-fast);
-	}
-
-	.modal-dismiss:hover,
-	.modal-dismiss:focus-visible {
-		background: var(--color-gray-100);
-		color: var(--color-text);
 	}
 
 	@media (min-width: 768px) {
