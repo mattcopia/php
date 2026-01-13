@@ -203,17 +203,17 @@
 
 	.tier--platinum {
 		background: linear-gradient(135deg, #E5E4E2, #A8A9AD);
-		color: var(--color-black);
+		color: #1a1a1a; /* Always dark on light metallic backgrounds */
 	}
 
 	.tier--gold {
 		background: linear-gradient(135deg, #FFD700, #FFA500);
-		color: var(--color-black);
+		color: #1a1a1a;
 	}
 
 	.tier--silver {
 		background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
-		color: var(--color-black);
+		color: #1a1a1a;
 	}
 
 	.tier--bronze {
