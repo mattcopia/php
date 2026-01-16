@@ -21,6 +21,14 @@
 				Schedule
 			</a>
 			<a
+				href="{base}/speakers"
+				class="nav-link"
+				class:active={currentPath === `${base}/speakers`}
+				aria-current={currentPath === `${base}/speakers` ? 'page' : undefined}
+			>
+				Speakers
+			</a>
+			<a
 				href="{base}/sponsors"
 				class="nav-link"
 				class:active={currentPath === `${base}/sponsors`}

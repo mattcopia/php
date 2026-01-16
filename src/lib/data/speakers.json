@@ -1,0 +1,180 @@
+{
+  "speakers": [
+    {
+      "id": 1,
+      "name": "Alice Ryhl",
+      "photo": "https://avatars.githubusercontent.com/u/16223837",
+      "title": "Software Engineer",
+      "company": "Google",
+      "bio": "Alice is a core maintainer of the Tokio async runtime and works on Rust infrastructure at Google. She has been instrumental in making async Rust more accessible and performant, contributing to numerous crates in the ecosystem.",
+      "social": {
+        "twitter": "alicewriteswasm",
+        "github": "Darksonn",
+        "linkedin": "alice-ryhl",
+        "website": "https://ryhl.io"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Ashley Williams",
+      "photo": "https://avatars.githubusercontent.com/u/1163554",
+      "title": "Director of Developer Relations",
+      "company": "Axo",
+      "bio": "Ashley is a passionate advocate for Rust and open source. Previously a core team member at the Rust Foundation, she now leads developer relations at Axo, focusing on improving the Rust tooling experience.",
+      "social": {
+        "twitter": "ag_dubs",
+        "github": "ashleygwilliams"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Ed Page",
+      "photo": "https://avatars.githubusercontent.com/u/411063",
+      "title": "Senior Software Engineer",
+      "company": "Independent",
+      "bio": "Ed maintains several popular Rust crates including clap (command line argument parser) and toml_edit. He's passionate about developer experience and API design in the Rust ecosystem.",
+      "social": {
+        "github": "epage",
+        "website": "https://epage.github.io"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Felix Klock",
+      "photo": "https://avatars.githubusercontent.com/u/44806",
+      "title": "Senior Staff Engineer",
+      "company": "Amazon",
+      "bio": "Felix has been working on Rust since before 1.0. He led the development of non-lexical lifetimes (NLL) and has contributed extensively to the Rust compiler. At Amazon, he works on making Rust a first-class language for systems programming.",
+      "social": {
+        "twitter": "paborneaux",
+        "github": "pnkfelix",
+        "linkedin": "felixklock"
+      }
+    },
+    {
+      "id": 5,
+      "name": "James Munns",
+      "photo": "https://avatars.githubusercontent.com/u/1292063",
+      "title": "Founder",
+      "company": "OneVariable",
+      "bio": "James is an embedded systems expert and the creator of postcard, a popular serialization format for Rust. He runs OneVariable, consulting on embedded Rust projects, and is a co-host of the Chats with James podcast.",
+      "social": {
+        "twitter": "bitshiftmask",
+        "github": "jamesmunns",
+        "website": "https://onevariable.com"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Jane Lusby",
+      "photo": "https://avatars.githubusercontent.com/u/51128931",
+      "title": "Error Handling Lead",
+      "company": "Rust Project",
+      "bio": "Jane leads the error handling initiative in the Rust project. She created the eyre crate and has been instrumental in improving Rust's error handling ergonomics. She's passionate about making Rust more approachable for newcomers.",
+      "social": {
+        "twitter": "yaaborneaux",
+        "github": "yaahc"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Josh Triplett",
+      "photo": "https://avatars.githubusercontent.com/u/161776",
+      "title": "Rust Language Team Co-Lead",
+      "company": "Rust Project",
+      "bio": "Josh co-leads the Rust language team and has been a driving force behind many language features. He previously worked on kernel development and brings deep systems programming expertise to the Rust community.",
+      "social": {
+        "github": "joshtriplett"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Manish Goregaokar",
+      "photo": "https://avatars.githubusercontent.com/u/1617736",
+      "title": "Staff Software Engineer",
+      "company": "Google",
+      "bio": "Manish works on Chrome and is deeply involved in the Rust and Unicode communities. He maintains the unicode-rs crates and has contributed extensively to Rust's internationalization story.",
+      "social": {
+        "twitter": "manaborneaux",
+        "github": "Manishearth",
+        "website": "https://manishearth.github.io"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Nell Shamrell-Harrington",
+      "photo": "https://avatars.githubusercontent.com/u/710493",
+      "title": "Principal Engineer",
+      "company": "Microsoft",
+      "bio": "Nell is a principal engineer at Microsoft working on Rust adoption. She's a board member of the Rust Foundation and an expert in both infrastructure and community building.",
+      "social": {
+        "twitter": "naborneaux",
+        "github": "nellshamrell",
+        "linkedin": "nellshamrell"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Nicholas Nethercote",
+      "photo": "https://avatars.githubusercontent.com/u/1940286",
+      "title": "Senior Engineer",
+      "company": "Mozilla",
+      "bio": "Nicholas is a compiler performance expert who has made significant contributions to making rustc faster. He writes extensively about Rust compiler internals and performance optimization techniques.",
+      "social": {
+        "github": "nnethercote",
+        "website": "https://nnethercote.github.io"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Niko Matsakis",
+      "photo": "https://avatars.githubusercontent.com/u/155238",
+      "title": "Senior Principal Engineer",
+      "company": "Amazon",
+      "bio": "Niko is one of the original architects of the Rust language and created its borrow checker. He co-leads the language design team and is known for his work on Polonius and async Rust. His blog \"Baby Steps\" is essential reading for anyone learning Rust internals.",
+      "social": {
+        "twitter": "nikaborneaux",
+        "github": "nikomatsakis",
+        "website": "https://smallcultfollowing.com/babysteps"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Sean Chen",
+      "photo": "https://avatars.githubusercontent.com/u/7739470",
+      "title": "Software Engineer",
+      "company": "Figma",
+      "bio": "Sean works on performance-critical systems at Figma using Rust. He's contributed to making Rust viable for complex desktop applications and shares his learnings about Rust in production.",
+      "social": {
+        "twitter": "sbaborneaux",
+        "github": "seanchen1991",
+        "linkedin": "sean-chen-52b63b54"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Steve Klabnik",
+      "photo": "https://avatars.githubusercontent.com/u/27786",
+      "title": "Writer & Developer",
+      "bio": "Steve is the author of \"The Rust Programming Language\" book (aka \"The Book\") and \"Rust for Rustaceans.\" He was a core team member and has been instrumental in making Rust's documentation world-class.",
+      "social": {
+        "twitter": "steveklabnik",
+        "github": "steveklabnik",
+        "website": "https://steveklabnik.com"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Predrag Gruevski",
+      "photo": "https://avatars.githubusercontent.com/u/2348618",
+      "title": "Founder & CEO",
+      "company": "Trustfall",
+      "bio": "Predrag created Trustfall, a query engine that lets you query any data source with GraphQL-like syntax. He's passionate about making data accessible and has spoken at numerous Rust conferences about query engines and compilers.",
+      "social": {
+        "twitter": "predaborneaux",
+        "github": "obi1kenobi",
+        "linkedin": "predrag-gruevski"
+      }
+    }
+  ]
+}

@@ -26,6 +26,19 @@
 			<p class="card-description">Browse talks, workshops, and keynotes across 4 tracks</p>
 		</a>
 
+		<a href="{base}/speakers" class="landing-card landing-card--speakers">
+			<div class="card-icon" aria-hidden="true">
+				<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+					<circle cx="9" cy="7" r="4"/>
+					<path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+					<path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+				</svg>
+			</div>
+			<h2 class="card-title">Our Speakers</h2>
+			<p class="card-description">Meet the amazing Rust experts sharing their knowledge</p>
+		</a>
+
 		<a href="{base}/sponsors" class="landing-card landing-card--sponsors">
 			<div class="card-icon" aria-hidden="true">
 				<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -128,6 +141,11 @@
 		color: var(--color-text-light);
 	}
 
+	.landing-card--speakers .card-icon {
+		background: var(--color-blue);
+		color: var(--color-text-light);
+	}
+
 	.landing-card--sponsors .card-icon {
 		background: var(--color-green);
 		color: var(--color-text-light);
@@ -157,16 +175,34 @@
 
 		.landing-nav {
 			flex-direction: row;
-			max-width: 700px;
+			flex-wrap: wrap;
+			justify-content: center;
+			max-width: 900px;
 		}
 
 		.landing-card {
 			flex: 1;
+			min-width: 200px;
+			max-width: 280px;
+			padding: var(--space-xl);
+		}
+
+		.card-title {
+			font-size: var(--text-lg);
+		}
+
+		.card-description {
+			font-size: var(--text-sm);
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.landing-card {
 			padding: var(--space-2xl);
 		}
 
 		.card-title {
-			font-size: var(--text-2xl);
+			font-size: var(--text-xl);
 		}
 
 		.card-description {
