@@ -288,7 +288,7 @@
 		outline: none;
 		border-color: var(--color-primary);
 		background: var(--color-white);
-		box-shadow: 0 0 0 3px rgba(79, 91, 147, 0.1);
+		box-shadow: 0 0 0 3px rgba(1, 138, 252, 0.15);
 	}
 
 	.tag-filters {

@@ -60,11 +60,11 @@
 		justify-content: center;
 		padding: var(--space-xl);
 		background:
-			linear-gradient(135deg, transparent 40%, rgba(79, 91, 147, 0.6) 40%, rgba(79, 91, 147, 0.6) 45%, transparent 45%),
-			linear-gradient(225deg, transparent 30%, rgba(94, 107, 165, 0.5) 30%, rgba(94, 107, 165, 0.5) 40%, transparent 40%),
-			linear-gradient(315deg, transparent 50%, rgba(79, 91, 147, 0.4) 50%, rgba(79, 91, 147, 0.4) 60%, transparent 60%),
-			linear-gradient(45deg, transparent 60%, rgba(94, 107, 165, 0.3) 60%, rgba(94, 107, 165, 0.3) 75%, transparent 75%),
-			linear-gradient(180deg, #4F5B93 0%, #3D4875 100%);
+			linear-gradient(135deg, transparent 40%, rgba(1, 138, 252, 0.6) 40%, rgba(1, 138, 252, 0.6) 45%, transparent 45%),
+			linear-gradient(225deg, transparent 30%, rgba(51, 161, 253, 0.5) 30%, rgba(51, 161, 253, 0.5) 40%, transparent 40%),
+			linear-gradient(315deg, transparent 50%, rgba(1, 138, 252, 0.4) 50%, rgba(1, 138, 252, 0.4) 60%, transparent 60%),
+			linear-gradient(45deg, transparent 60%, rgba(51, 161, 253, 0.3) 60%, rgba(51, 161, 253, 0.3) 75%, transparent 75%),
+			linear-gradient(180deg, #018AFC 0%, #0070CC 100%);
 		background-attachment: fixed;
 	}
 

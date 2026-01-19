@@ -47,8 +47,8 @@
 		justify-content: space-between;
 		padding: var(--space-md) var(--space-lg);
 		background:
-			linear-gradient(135deg, transparent 75%, rgba(94, 107, 165, 0.4) 75%, rgba(94, 107, 165, 0.4) 85%, transparent 85%),
-			linear-gradient(180deg, #4F5B93 0%, #3D4875 100%);
+			linear-gradient(135deg, transparent 75%, rgba(51, 161, 253, 0.4) 75%, rgba(51, 161, 253, 0.4) 85%, transparent 85%),
+			linear-gradient(180deg, #018AFC 0%, #0070CC 100%);
 		position: relative;
 		z-index: 100;
 	}

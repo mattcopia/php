@@ -2,21 +2,21 @@
   <!-- elePHPant - PHP Mascot -->
 
   <!-- Body -->
-  <ellipse cx="100" cy="120" rx="60" ry="50" fill="#4F5B93"/>
+  <ellipse cx="100" cy="120" rx="60" ry="50" fill="#018AFC"/>
 
   <!-- Head -->
-  <circle cx="100" cy="75" r="45" fill="#4F5B93"/>
+  <circle cx="100" cy="75" r="45" fill="#018AFC"/>
 
   <!-- Left Ear -->
-  <ellipse cx="55" cy="55" rx="22" ry="28" fill="#4F5B93"/>
-  <ellipse cx="55" cy="55" rx="14" ry="18" fill="#7B87C6"/>
+  <ellipse cx="55" cy="55" rx="22" ry="28" fill="#018AFC"/>
+  <ellipse cx="55" cy="55" rx="14" ry="18" fill="#4DB8FF"/>
 
   <!-- Right Ear -->
-  <ellipse cx="145" cy="55" rx="22" ry="28" fill="#4F5B93"/>
-  <ellipse cx="145" cy="55" rx="14" ry="18" fill="#7B87C6"/>
+  <ellipse cx="145" cy="55" rx="22" ry="28" fill="#018AFC"/>
+  <ellipse cx="145" cy="55" rx="14" ry="18" fill="#4DB8FF"/>
 
   <!-- Trunk -->
-  <path d="M100 95 Q100 130 85 150 Q80 158 85 165 Q90 170 100 165 Q105 162 105 155 Q105 145 100 130 Q100 115 100 95" fill="#4F5B93" stroke="#3D4875" stroke-width="2"/>
+  <path d="M100 95 Q100 130 85 150 Q80 158 85 165 Q90 170 100 165 Q105 162 105 155 Q105 145 100 130 Q100 115 100 95" fill="#018AFC" stroke="#0070CC" stroke-width="2"/>
 
   <!-- Left Eye -->
   <circle cx="80" cy="70" r="10" fill="#FFFFFF"/>
@@ -29,18 +29,18 @@
   <circle cx="124" cy="68" r="2" fill="#FFFFFF"/>
 
   <!-- Cheeks -->
-  <ellipse cx="65" cy="85" rx="8" ry="5" fill="#7B87C6" opacity="0.6"/>
-  <ellipse cx="135" cy="85" rx="8" ry="5" fill="#7B87C6" opacity="0.6"/>
+  <ellipse cx="65" cy="85" rx="8" ry="5" fill="#4DB8FF" opacity="0.6"/>
+  <ellipse cx="135" cy="85" rx="8" ry="5" fill="#4DB8FF" opacity="0.6"/>
 
   <!-- Legs -->
-  <rect x="60" y="150" width="20" height="30" rx="10" fill="#4F5B93"/>
-  <rect x="120" y="150" width="20" height="30" rx="10" fill="#4F5B93"/>
+  <rect x="60" y="150" width="20" height="30" rx="10" fill="#018AFC"/>
+  <rect x="120" y="150" width="20" height="30" rx="10" fill="#018AFC"/>
 
   <!-- Feet -->
-  <ellipse cx="70" cy="180" rx="12" ry="6" fill="#3D4875"/>
-  <ellipse cx="130" cy="180" rx="12" ry="6" fill="#3D4875"/>
+  <ellipse cx="70" cy="180" rx="12" ry="6" fill="#0070CC"/>
+  <ellipse cx="130" cy="180" rx="12" ry="6" fill="#0070CC"/>
 
   <!-- Tail -->
-  <path d="M160 120 Q175 115 180 125 Q182 130 178 132" stroke="#4F5B93" stroke-width="6" stroke-linecap="round" fill="none"/>
-  <circle cx="178" cy="132" r="4" fill="#4F5B93"/>
+  <path d="M160 120 Q175 115 180 125 Q182 130 178 132" stroke="#018AFC" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <circle cx="178" cy="132" r="4" fill="#018AFC"/>
 </svg>

@@ -1,13 +1,13 @@
 :root {
 	/* Brand Colors - PHP UK Blue */
-	--color-primary: #4F5B93;
-	--color-primary-dark: #3D4875;
-	--color-primary-light: #6B78B0;
+	--color-primary: #018AFC;
+	--color-primary-dark: #0070CC;
+	--color-primary-light: #33A1FD;
 
 	--color-red: #D93B3F;
 	--color-yellow: #FEDB30;
 	--color-pink: #EF82EB;
-	--color-blue: #4F5B93;
+	--color-blue: #018AFC;
 	--color-green: #008F59;
 
 	/* Neutrals */
@@ -20,9 +20,9 @@
 	--color-gray-800: #3A3A3C;
 
 	/* Blue variants for background */
-	--color-blue-dark: #3D4875;
-	--color-blue-mid: #4F5B93;
-	--color-blue-light: #5E6BA5;
+	--color-blue-dark: #0070CC;
+	--color-blue-mid: #018AFC;
+	--color-blue-light: #33A1FD;
 
 	/* Semantic Colors */
 	--color-background: var(--color-primary);
@@ -150,10 +150,10 @@ a {
 		--color-gray-300: #3A3A3C;
 		--color-gray-600: #98989D;
 		--color-gray-800: #D1D1D6;
-		--color-primary: #7B87C6; /* Lighter blue for dark mode contrast */
-		--color-primary-dark: #6B78B0;
-		--color-primary-light: #9AA3D4;
-		--color-blue: #7B87C6;
+		--color-primary: #4DB8FF; /* Lighter blue for dark mode contrast */
+		--color-primary-dark: #33A1FD;
+		--color-primary-light: #7FCBFF;
+		--color-blue: #4DB8FF;
 		--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
 		--shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 		--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);

@@ -145,9 +145,9 @@
 
 	.speakers-header {
 		background:
-			linear-gradient(135deg, transparent 60%, rgba(79, 91, 147, 0.5) 60%, rgba(79, 91, 147, 0.5) 70%, transparent 70%),
-			linear-gradient(225deg, transparent 70%, rgba(94, 107, 165, 0.4) 70%, rgba(94, 107, 165, 0.4) 85%, transparent 85%),
-			linear-gradient(180deg, #4F5B93 0%, #3D4875 100%);
+			linear-gradient(135deg, transparent 60%, rgba(1, 138, 252, 0.5) 60%, rgba(1, 138, 252, 0.5) 70%, transparent 70%),
+			linear-gradient(225deg, transparent 70%, rgba(51, 161, 253, 0.4) 70%, rgba(51, 161, 253, 0.4) 85%, transparent 85%),
+			linear-gradient(180deg, #018AFC 0%, #0070CC 100%);
 		padding: var(--space-xl) var(--space-lg);
 		text-align: center;
 	}
@@ -206,7 +206,7 @@
 	.search-input:focus {
 		outline: none;
 		border-color: var(--color-primary);
-		box-shadow: 0 0 0 3px rgba(79, 91, 147, 0.1);
+		box-shadow: 0 0 0 3px rgba(1, 138, 252, 0.15);
 	}
 
 	.search-input::placeholder {
@@ -233,7 +233,7 @@
 	.company-select:focus {
 		outline: none;
 		border-color: var(--color-primary);
-		box-shadow: 0 0 0 3px rgba(79, 91, 147, 0.1);
+		box-shadow: 0 0 0 3px rgba(1, 138, 252, 0.15);
 	}
 
 	.select-icon {

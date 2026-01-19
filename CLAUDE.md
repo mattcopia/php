@@ -38,7 +38,7 @@ npm run preview
 
 ## Brand Colors
 
-- Primary: `#4F5B93` (PHP blue)
-- Primary Dark: `#3D4875`
-- Primary Light: `#6B78B0`
-- Dark Mode Primary: `#7B87C6`
+- Primary: `#018AFC` (PHP blue)
+- Primary Dark: `#0070CC`
+- Primary Light: `#33A1FD`
+- Dark Mode Primary: `#4DB8FF`
