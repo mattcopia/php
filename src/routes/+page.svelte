@@ -7,10 +7,6 @@
 </svelte:head>
 
 <div class="landing" style="background-image: url('{base}/bg-pattern.svg');">
-	<div class="hero">
-		<p class="hero-tagline">The UK's premier PHP conference</p>
-	</div>
-
 	<nav class="landing-nav" aria-label="Main sections">
 		<a href="{base}/schedule" class="landing-card landing-card--schedule">
 			<div class="card-icon" aria-hidden="true">
@@ -63,17 +59,6 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
-	}
-
-	.hero {
-		text-align: center;
-		margin-bottom: var(--space-2xl);
-	}
-
-	.hero-tagline {
-		color: var(--color-text-on-primary);
-		font-size: var(--text-lg);
-		opacity: 0.9;
 	}
 
 	.landing-nav {
@@ -141,10 +126,6 @@
 	}
 
 	@media (min-width: 768px) {
-		.hero-tagline {
-			font-size: var(--text-xl);
-		}
-
 		.landing-nav {
 			flex-direction: row;
 			flex-wrap: wrap;
