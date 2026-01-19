@@ -58,14 +58,14 @@
 </script>
 
 <svelte:head>
-	<title>Speakers - Rust Nation UK</title>
+	<title>Speakers - PHP UK Conference</title>
 </svelte:head>
 
 <div class="speakers-page">
 	<div class="speakers-header">
 		<h1 class="speakers-title">Our Speakers</h1>
 		<p class="speakers-subtitle">
-			Meet the amazing people sharing their Rust expertise
+			Meet the amazing people sharing their PHP expertise
 		</p>
 	</div>
 
@@ -145,9 +145,9 @@
 
 	.speakers-header {
 		background:
-			linear-gradient(135deg, transparent 60%, rgba(116, 8, 227, 0.5) 60%, rgba(116, 8, 227, 0.5) 70%, transparent 70%),
-			linear-gradient(225deg, transparent 70%, rgba(132, 26, 242, 0.4) 70%, rgba(132, 26, 242, 0.4) 85%, transparent 85%),
-			linear-gradient(180deg, #780AE9 0%, #6a08d4 100%);
+			linear-gradient(135deg, transparent 60%, rgba(79, 91, 147, 0.5) 60%, rgba(79, 91, 147, 0.5) 70%, transparent 70%),
+			linear-gradient(225deg, transparent 70%, rgba(94, 107, 165, 0.4) 70%, rgba(94, 107, 165, 0.4) 85%, transparent 85%),
+			linear-gradient(180deg, #4F5B93 0%, #3D4875 100%);
 		padding: var(--space-xl) var(--space-lg);
 		text-align: center;
 	}
@@ -206,7 +206,7 @@
 	.search-input:focus {
 		outline: none;
 		border-color: var(--color-primary);
-		box-shadow: 0 0 0 3px rgba(120, 10, 233, 0.1);
+		box-shadow: 0 0 0 3px rgba(79, 91, 147, 0.1);
 	}
 
 	.search-input::placeholder {
@@ -233,7 +233,7 @@
 	.company-select:focus {
 		outline: none;
 		border-color: var(--color-primary);
-		box-shadow: 0 0 0 3px rgba(120, 10, 233, 0.1);
+		box-shadow: 0 0 0 3px rgba(79, 91, 147, 0.1);
 	}
 
 	.select-icon {

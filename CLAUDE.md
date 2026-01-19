@@ -4,38 +4,41 @@ This file provides guidance to Claude Code when working with this codebase.
 
 ## Project Overview
 
-This is a Rust project.
+This is a SvelteKit conference schedule app for PHP UK Conference. It displays talks, speakers, sponsors, and schedule information.
+
+**Tech Stack**: SvelteKit 2, Svelte 5, TypeScript, Vite 6
 
 ## Common Commands
 
 ```bash
-# Build the project
-cargo build
+# Start development server
+npm run dev
 
-# Build in release mode
-cargo build --release
+# Build for production (static site)
+npm run build
 
-# Run tests
-cargo test
-
-# Run the project
-cargo run
-
-# Check for errors without building
-cargo check
-
-# Format code
-cargo fmt
-
-# Run linter
-cargo clippy
+# Preview production build
+npm run preview
 ```
+
+## Project Structure
+
+- `src/routes/` - SvelteKit pages (schedule, speakers, sponsors)
+- `src/lib/components/` - Reusable Svelte components
+- `src/lib/data/` - JSON data files for talks, speakers, sponsors
+- `src/lib/styles/` - Global CSS and theme variables
+- `static/` - Static assets (logos, mascot)
 
 ## Code Style
 
-- Follow standard Rust conventions and idioms
-- Use `cargo fmt` to format code before committing
-- Address `cargo clippy` warnings
-- Write tests for new functionality
+- Follow Svelte 5 conventions (use `$state`, `$derived`, `$effect` runes)
+- Use TypeScript for type safety
+- Keep components small and focused
 - Use meaningful variable and function names
-- Prefer explicit error handling over `.unwrap()` in production code
+
+## Brand Colors
+
+- Primary: `#4F5B93` (PHP blue)
+- Primary Dark: `#3D4875`
+- Primary Light: `#6B78B0`
+- Dark Mode Primary: `#7B87C6`

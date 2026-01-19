@@ -1,0 +1,46 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- elePHPant - PHP Mascot -->
+
+  <!-- Body -->
+  <ellipse cx="100" cy="120" rx="60" ry="50" fill="#4F5B93"/>
+
+  <!-- Head -->
+  <circle cx="100" cy="75" r="45" fill="#4F5B93"/>
+
+  <!-- Left Ear -->
+  <ellipse cx="55" cy="55" rx="22" ry="28" fill="#4F5B93"/>
+  <ellipse cx="55" cy="55" rx="14" ry="18" fill="#7B87C6"/>
+
+  <!-- Right Ear -->
+  <ellipse cx="145" cy="55" rx="22" ry="28" fill="#4F5B93"/>
+  <ellipse cx="145" cy="55" rx="14" ry="18" fill="#7B87C6"/>
+
+  <!-- Trunk -->
+  <path d="M100 95 Q100 130 85 150 Q80 158 85 165 Q90 170 100 165 Q105 162 105 155 Q105 145 100 130 Q100 115 100 95" fill="#4F5B93" stroke="#3D4875" stroke-width="2"/>
+
+  <!-- Left Eye -->
+  <circle cx="80" cy="70" r="10" fill="#FFFFFF"/>
+  <circle cx="82" cy="70" r="5" fill="#020203"/>
+  <circle cx="84" cy="68" r="2" fill="#FFFFFF"/>
+
+  <!-- Right Eye -->
+  <circle cx="120" cy="70" r="10" fill="#FFFFFF"/>
+  <circle cx="122" cy="70" r="5" fill="#020203"/>
+  <circle cx="124" cy="68" r="2" fill="#FFFFFF"/>
+
+  <!-- Cheeks -->
+  <ellipse cx="65" cy="85" rx="8" ry="5" fill="#7B87C6" opacity="0.6"/>
+  <ellipse cx="135" cy="85" rx="8" ry="5" fill="#7B87C6" opacity="0.6"/>
+
+  <!-- Legs -->
+  <rect x="60" y="150" width="20" height="30" rx="10" fill="#4F5B93"/>
+  <rect x="120" y="150" width="20" height="30" rx="10" fill="#4F5B93"/>
+
+  <!-- Feet -->
+  <ellipse cx="70" cy="180" rx="12" ry="6" fill="#3D4875"/>
+  <ellipse cx="130" cy="180" rx="12" ry="6" fill="#3D4875"/>
+
+  <!-- Tail -->
+  <path d="M160 120 Q175 115 180 125 Q182 130 178 132" stroke="#4F5B93" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <circle cx="178" cy="132" r="4" fill="#4F5B93"/>
+</svg>

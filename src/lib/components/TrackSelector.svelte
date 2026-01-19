@@ -91,8 +91,8 @@
 		top: 0;
 		z-index: 90;
 		background:
-			linear-gradient(225deg, transparent 85%, rgba(132, 26, 242, 0.3) 85%, rgba(132, 26, 242, 0.3) 95%, transparent 95%),
-			linear-gradient(180deg, #6a08d4 0%, #5a07b8 100%);
+			linear-gradient(225deg, transparent 85%, rgba(94, 107, 165, 0.3) 85%, rgba(94, 107, 165, 0.3) 95%, transparent 95%),
+			linear-gradient(180deg, #3D4875 0%, #333D66 100%);
 	}
 
 	.track-selector {

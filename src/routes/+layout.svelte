@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>Rust Nation UK</title>
+	<title>PHP UK Conference</title>
 </svelte:head>
 
 <div class="app">

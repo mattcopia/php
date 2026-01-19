@@ -3,13 +3,13 @@
 </script>
 
 <svelte:head>
-	<title>Rust Nation UK - Conference Schedule</title>
+	<title>PHP UK Conference 2026</title>
 </svelte:head>
 
 <div class="landing">
 	<div class="hero">
-		<img src="{base}/crab.svg" alt="Ferris the Rust crab" class="hero-crab" />
-		<p class="hero-tagline">The UK's premier Rust conference</p>
+		<img src="{base}/elephant.svg" alt="elePHPant mascot" class="hero-mascot" />
+		<p class="hero-tagline">The UK's premier PHP conference</p>
 	</div>
 
 	<nav class="landing-nav" aria-label="Main sections">
@@ -36,7 +36,7 @@
 				</svg>
 			</div>
 			<h2 class="card-title">Our Speakers</h2>
-			<p class="card-description">Meet the amazing Rust experts sharing their knowledge</p>
+			<p class="card-description">Meet the amazing PHP experts sharing their knowledge</p>
 		</a>
 
 		<a href="{base}/sponsors" class="landing-card landing-card--sponsors">
@@ -46,7 +46,7 @@
 				</svg>
 			</div>
 			<h2 class="card-title">Our Sponsors</h2>
-			<p class="card-description">Meet the amazing companies supporting Rust Nation UK</p>
+			<p class="card-description">Meet the amazing companies supporting PHP UK</p>
 		</a>
 	</nav>
 </div>
@@ -60,11 +60,11 @@
 		justify-content: center;
 		padding: var(--space-xl);
 		background:
-			linear-gradient(135deg, transparent 40%, rgba(116, 8, 227, 0.6) 40%, rgba(116, 8, 227, 0.6) 45%, transparent 45%),
-			linear-gradient(225deg, transparent 30%, rgba(132, 26, 242, 0.5) 30%, rgba(132, 26, 242, 0.5) 40%, transparent 40%),
-			linear-gradient(315deg, transparent 50%, rgba(116, 8, 227, 0.4) 50%, rgba(116, 8, 227, 0.4) 60%, transparent 60%),
-			linear-gradient(45deg, transparent 60%, rgba(132, 26, 242, 0.3) 60%, rgba(132, 26, 242, 0.3) 75%, transparent 75%),
-			linear-gradient(180deg, #780AE9 0%, #6a08d4 100%);
+			linear-gradient(135deg, transparent 40%, rgba(79, 91, 147, 0.6) 40%, rgba(79, 91, 147, 0.6) 45%, transparent 45%),
+			linear-gradient(225deg, transparent 30%, rgba(94, 107, 165, 0.5) 30%, rgba(94, 107, 165, 0.5) 40%, transparent 40%),
+			linear-gradient(315deg, transparent 50%, rgba(79, 91, 147, 0.4) 50%, rgba(79, 91, 147, 0.4) 60%, transparent 60%),
+			linear-gradient(45deg, transparent 60%, rgba(94, 107, 165, 0.3) 60%, rgba(94, 107, 165, 0.3) 75%, transparent 75%),
+			linear-gradient(180deg, #4F5B93 0%, #3D4875 100%);
 		background-attachment: fixed;
 	}
 
@@ -73,16 +73,16 @@
 		margin-bottom: var(--space-2xl);
 	}
 
-	.hero-crab {
+	.hero-mascot {
 		width: 160px;
 		max-width: 100%;
 		height: auto;
 		margin: 0 auto var(--space-lg);
-		animation: crab-float 3s ease-in-out infinite;
+		animation: mascot-float 3s ease-in-out infinite;
 		filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
 	}
 
-	@keyframes crab-float {
+	@keyframes mascot-float {
 		0%, 100% {
 			transform: translateY(0) rotate(0deg);
 		}
@@ -165,7 +165,7 @@
 	}
 
 	@media (min-width: 768px) {
-		.hero-crab {
+		.hero-mascot {
 			width: 200px;
 		}
 

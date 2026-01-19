@@ -6,8 +6,8 @@
 </script>
 
 <header class="header">
-	<a href="{base}/" class="logo-link" aria-label="Rust Nation UK Home">
-		<img src="{base}/Logo.svg" alt="Rust Nation UK" class="logo" />
+	<a href="{base}/" class="logo-link" aria-label="PHP UK Conference Home">
+		<img src="{base}/Logo.svg" alt="PHP UK Conference" class="logo" />
 	</a>
 
 	{#if currentPath !== `${base}/` && currentPath !== base}
@@ -47,8 +47,8 @@
 		justify-content: space-between;
 		padding: var(--space-md) var(--space-lg);
 		background:
-			linear-gradient(135deg, transparent 75%, rgba(132, 26, 242, 0.4) 75%, rgba(132, 26, 242, 0.4) 85%, transparent 85%),
-			linear-gradient(180deg, #780AE9 0%, #7408E3 100%);
+			linear-gradient(135deg, transparent 75%, rgba(94, 107, 165, 0.4) 75%, rgba(94, 107, 165, 0.4) 85%, transparent 85%),
+			linear-gradient(180deg, #4F5B93 0%, #3D4875 100%);
 		position: relative;
 		z-index: 100;
 	}

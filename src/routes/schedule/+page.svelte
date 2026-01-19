@@ -142,7 +142,7 @@
 </script>
 
 <svelte:head>
-	<title>Schedule - Rust Nation UK</title>
+	<title>Schedule - PHP UK Conference</title>
 </svelte:head>
 
 <div class="schedule-page">
@@ -288,7 +288,7 @@
 		outline: none;
 		border-color: var(--color-primary);
 		background: var(--color-white);
-		box-shadow: 0 0 0 3px rgba(120, 10, 233, 0.1);
+		box-shadow: 0 0 0 3px rgba(79, 91, 147, 0.1);
 	}
 
 	.tag-filters {

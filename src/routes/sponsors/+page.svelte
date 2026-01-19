@@ -30,14 +30,14 @@
 </script>
 
 <svelte:head>
-	<title>Sponsors - Rust Nation UK</title>
+	<title>Sponsors - PHP UK Conference</title>
 </svelte:head>
 
 <div class="sponsors-page">
 	<div class="sponsors-header">
 		<h1 class="sponsors-title">Our Sponsors</h1>
 		<p class="sponsors-subtitle">
-			Rust Nation UK is made possible by these amazing companies
+			PHP UK Conference is made possible by these amazing companies
 		</p>
 	</div>
 
@@ -67,9 +67,9 @@
 
 	.sponsors-header {
 		background:
-			linear-gradient(135deg, transparent 60%, rgba(116, 8, 227, 0.5) 60%, rgba(116, 8, 227, 0.5) 70%, transparent 70%),
-			linear-gradient(225deg, transparent 70%, rgba(132, 26, 242, 0.4) 70%, rgba(132, 26, 242, 0.4) 85%, transparent 85%),
-			linear-gradient(180deg, #780AE9 0%, #6a08d4 100%);
+			linear-gradient(135deg, transparent 60%, rgba(79, 91, 147, 0.5) 60%, rgba(79, 91, 147, 0.5) 70%, transparent 70%),
+			linear-gradient(225deg, transparent 70%, rgba(94, 107, 165, 0.4) 70%, rgba(94, 107, 165, 0.4) 85%, transparent 85%),
+			linear-gradient(180deg, #4F5B93 0%, #3D4875 100%);
 		padding: var(--space-xl) var(--space-lg);
 		text-align: center;
 	}
