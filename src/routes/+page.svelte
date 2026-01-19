@@ -8,7 +8,6 @@
 
 <div class="landing" style="background-image: url('{base}/bg-pattern.svg');">
 	<div class="hero">
-		<img src="{base}/elephant.svg" alt="elePHPant mascot" class="hero-mascot" />
 		<p class="hero-tagline">The UK's premier PHP conference</p>
 	</div>
 
@@ -69,27 +68,6 @@
 	.hero {
 		text-align: center;
 		margin-bottom: var(--space-2xl);
-	}
-
-	.hero-mascot {
-		width: 160px;
-		max-width: 100%;
-		height: auto;
-		margin: 0 auto var(--space-lg);
-		animation: mascot-float 3s ease-in-out infinite;
-		filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
-	}
-
-	@keyframes mascot-float {
-		0%, 100% {
-			transform: translateY(0) rotate(0deg);
-		}
-		25% {
-			transform: translateY(-6px) rotate(1deg);
-		}
-		75% {
-			transform: translateY(-6px) rotate(-1deg);
-		}
 	}
 
 	.hero-tagline {
@@ -163,10 +141,6 @@
 	}
 
 	@media (min-width: 768px) {
-		.hero-mascot {
-			width: 200px;
-		}
-
 		.hero-tagline {
 			font-size: var(--text-xl);
 		}

@@ -63,7 +63,7 @@
 </svelte:head>
 
 <div class="speakers-page">
-	<div class="speakers-header" style="background-image: url('{base}/bg-pattern.svg');">
+	<div class="speakers-header">
 		<h1 class="speakers-title">Our Speakers</h1>
 		<p class="speakers-subtitle">
 			Meet the amazing people sharing their PHP expertise

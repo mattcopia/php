@@ -58,7 +58,7 @@
 	}
 </script>
 
-<div class="track-selector-wrapper" class:animated={hasAnimated} style="background-image: url('{base}/bg-pattern.svg');">
+<div class="track-selector-wrapper" class:animated={hasAnimated}>
 	<div class="track-selector" role="tablist" aria-label="Conference tracks">
 		{#each tracks as track, i (track.id)}
 			<button
@@ -91,10 +91,7 @@
 		position: sticky;
 		top: 0;
 		z-index: 90;
-		background-color: #0070CC;
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
+		background-color: #000000;
 	}
 
 	.track-selector {

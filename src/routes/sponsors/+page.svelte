@@ -35,7 +35,7 @@
 </svelte:head>
 
 <div class="sponsors-page">
-	<div class="sponsors-header" style="background-image: url('{base}/bg-pattern.svg');">
+	<div class="sponsors-header">
 		<h1 class="sponsors-title">Our Sponsors</h1>
 		<p class="sponsors-subtitle">
 			PHP UK Conference is made possible by these amazing companies
