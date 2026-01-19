@@ -5,7 +5,7 @@
 	let currentPath = $derived($page.url.pathname);
 </script>
 
-<header class="header">
+<header class="header" style="background-image: url('{base}/bg-pattern.svg');">
 	<a href="{base}/" class="logo-link" aria-label="PHP UK Conference Home">
 		<img src="{base}/Logo.svg" alt="PHP UK Conference" class="logo" />
 	</a>
@@ -46,9 +46,10 @@
 		align-items: center;
 		justify-content: space-between;
 		padding: var(--space-md) var(--space-lg);
-		background:
-			linear-gradient(135deg, transparent 75%, rgba(51, 161, 253, 0.4) 75%, rgba(51, 161, 253, 0.4) 85%, transparent 85%),
-			linear-gradient(180deg, #018AFC 0%, #0070CC 100%);
+		background-color: #018AFC;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 		position: relative;
 		z-index: 100;
 	}

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import SpeakerCard from '$lib/components/SpeakerCard.svelte';
 	import speakersData from '$lib/data/speakers.json';
 
@@ -62,7 +63,7 @@
 </svelte:head>
 
 <div class="speakers-page">
-	<div class="speakers-header">
+	<div class="speakers-header" style="background-image: url('{base}/bg-pattern.svg');">
 		<h1 class="speakers-title">Our Speakers</h1>
 		<p class="speakers-subtitle">
 			Meet the amazing people sharing their PHP expertise
@@ -144,10 +145,10 @@
 	}
 
 	.speakers-header {
-		background:
-			linear-gradient(135deg, transparent 60%, rgba(1, 138, 252, 0.5) 60%, rgba(1, 138, 252, 0.5) 70%, transparent 70%),
-			linear-gradient(225deg, transparent 70%, rgba(51, 161, 253, 0.4) 70%, rgba(51, 161, 253, 0.4) 85%, transparent 85%),
-			linear-gradient(180deg, #018AFC 0%, #0070CC 100%);
+		background-color: #018AFC;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 		padding: var(--space-xl) var(--space-lg);
 		text-align: center;
 	}

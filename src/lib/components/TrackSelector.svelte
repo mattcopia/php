@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
 
 	interface Track {
 		id: number;
@@ -57,7 +58,7 @@
 	}
 </script>
 
-<div class="track-selector-wrapper" class:animated={hasAnimated}>
+<div class="track-selector-wrapper" class:animated={hasAnimated} style="background-image: url('{base}/bg-pattern.svg');">
 	<div class="track-selector" role="tablist" aria-label="Conference tracks">
 		{#each tracks as track, i (track.id)}
 			<button
@@ -90,9 +91,10 @@
 		position: sticky;
 		top: 0;
 		z-index: 90;
-		background:
-			linear-gradient(225deg, transparent 85%, rgba(51, 161, 253, 0.3) 85%, rgba(51, 161, 253, 0.3) 95%, transparent 95%),
-			linear-gradient(180deg, #0070CC 0%, #005AA3 100%);
+		background-color: #0070CC;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 	}
 
 	.track-selector {

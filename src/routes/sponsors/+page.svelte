@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import SponsorCard from '$lib/components/SponsorCard.svelte';
 	import sponsorsData from '$lib/data/sponsors.json';
 
@@ -34,7 +35,7 @@
 </svelte:head>
 
 <div class="sponsors-page">
-	<div class="sponsors-header">
+	<div class="sponsors-header" style="background-image: url('{base}/bg-pattern.svg');">
 		<h1 class="sponsors-title">Our Sponsors</h1>
 		<p class="sponsors-subtitle">
 			PHP UK Conference is made possible by these amazing companies
@@ -66,10 +67,10 @@
 	}
 
 	.sponsors-header {
-		background:
-			linear-gradient(135deg, transparent 60%, rgba(1, 138, 252, 0.5) 60%, rgba(1, 138, 252, 0.5) 70%, transparent 70%),
-			linear-gradient(225deg, transparent 70%, rgba(51, 161, 253, 0.4) 70%, rgba(51, 161, 253, 0.4) 85%, transparent 85%),
-			linear-gradient(180deg, #018AFC 0%, #0070CC 100%);
+		background-color: #018AFC;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 		padding: var(--space-xl) var(--space-lg);
 		text-align: center;
 	}
