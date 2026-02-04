@@ -4,13 +4,57 @@
 	import TalkCard from '$lib/components/TalkCard.svelte';
 	import BreakCard from '$lib/components/BreakCard.svelte';
 	import SponsorToast from '$lib/components/SponsorToast.svelte';
-	import scheduleData from '$lib/data/schedule.json';
-	import adsData from '$lib/data/ads.json';
 
-	let selectedTrack = $state(1);
+	interface Talk {
+		id: string | number;
+		track: string | number;
+		time: string;
+		duration: number;
+		title: string;
+		speaker: string;
+		speakerPhoto: string;
+		synopsis: string;
+		tag: 'keynote' | 'talk' | 'tutorial';
+		social: {
+			twitter?: string;
+			github?: string;
+			website?: string;
+		};
+	}
+
+	interface BreakItem {
+		time: string;
+		duration: number;
+		type: string;
+		label: string;
+	}
+
+	interface Track {
+		id: string | number;
+		name: string;
+	}
+
+	interface SponsorAd {
+		id: string | number;
+		name: string;
+		tier: string;
+		logo: string;
+		message: string;
+		fullMessage?: string;
+		image?: string;
+		url: string;
+	}
+
+	let { data } = $props();
+
+	let tracks: Track[] = data.tracks;
+	let talks: Talk[] = data.talks;
+	let breaks: BreakItem[] = data.breaks;
+	let sponsorAds: SponsorAd[] = data.sponsorAds;
+
+	let selectedTrack = $state<string | number>(tracks[0]?.id || 1);
 	let searchQuery = $state('');
 	let selectedTags = $state<string[]>([]);
-	let isLoading = $state(true);
 	let currentTime = $state(new Date());
 
 	const allTags = ['keynote', 'talk', 'tutorial'];
@@ -37,49 +81,25 @@
 		return now >= talkStart && now < talkEnd;
 	}
 
-	interface Talk {
-		id: number;
-		track: number;
-		time: string;
-		duration: number;
-		title: string;
-		speaker: string;
-		speakerPhoto: string;
-		synopsis: string;
-		tag: 'keynote' | 'talk' | 'tutorial';
-		social: {
-			twitter?: string;
-			github?: string;
-			website?: string;
-		};
-	}
-
-	interface BreakItem {
-		time: string;
-		duration: number;
-		type: string;
-		label: string;
-	}
-
 	interface ScheduleItem {
 		type: 'talk' | 'break';
 		time: string;
 		data: Talk | BreakItem;
 	}
 
-	function getSchedule(trackId: number, query: string, tags: string[]): ScheduleItem[] {
+	function getSchedule(trackId: string | number, query: string, tags: string[]): ScheduleItem[] {
 		const hasFilter = query.trim() !== '' || tags.length > 0;
-		let talks = (scheduleData.talks as Talk[]);
+		let filteredTalks = [...talks];
 
 		// Only filter by track if NOT searching/filtering
 		if (!hasFilter) {
-			talks = talks.filter((talk) => talk.track === trackId);
+			filteredTalks = filteredTalks.filter((talk) => talk.track === trackId);
 		}
 
 		// Apply search filter
 		if (query.trim()) {
 			const q = query.toLowerCase();
-			talks = talks.filter((talk) =>
+			filteredTalks = filteredTalks.filter((talk) =>
 				talk.title.toLowerCase().includes(q) ||
 				talk.speaker.toLowerCase().includes(q)
 			);
@@ -87,27 +107,27 @@
 
 		// Apply tag filter
 		if (tags.length > 0) {
-			talks = talks.filter((talk) => tags.includes(talk.tag));
+			filteredTalks = filteredTalks.filter((talk) => tags.includes(talk.tag));
 		}
 
-		const talkItems = talks.map((talk) => ({ type: 'talk' as const, time: talk.time, data: talk }));
+		const talkItems = filteredTalks.map((talk) => ({ type: 'talk' as const, time: talk.time, data: talk }));
 
 		// Only show breaks if no search/filter active
-		const breaks = hasFilter ? [] : (scheduleData.breaks as BreakItem[]).map((b) => ({
+		const breakItems = hasFilter ? [] : breaks.map((b) => ({
 			type: 'break' as const,
 			time: b.time,
 			data: b
 		}));
 
-		const combined = [...talkItems, ...breaks];
+		const combined = [...talkItems, ...breakItems];
 		combined.sort((a, b) => a.time.localeCompare(b.time));
 
 		return combined;
 	}
 
 	// Get track name by ID
-	function getTrackName(trackId: number): string {
-		const track = scheduleData.tracks.find(t => t.id === trackId);
+	function getTrackName(trackId: string | number): string {
+		const track = tracks.find(t => t.id === trackId);
 		return track?.name || '';
 	}
 
@@ -116,7 +136,7 @@
 
 	let schedule = $derived(getSchedule(selectedTrack, searchQuery, selectedTags));
 
-	function handleTrackSelect(trackId: number) {
+	function handleTrackSelect(trackId: string | number) {
 		selectedTrack = trackId;
 	}
 
@@ -132,13 +152,6 @@
 		searchQuery = '';
 		selectedTags = [];
 	}
-
-	onMount(() => {
-		// Simulate loading (replace with actual API call)
-		setTimeout(() => {
-			isLoading = false;
-		}, 300);
-	});
 </script>
 
 <svelte:head>
@@ -147,7 +160,7 @@
 
 <div class="schedule-page">
 	<TrackSelector
-		tracks={scheduleData.tracks}
+		{tracks}
 		{selectedTrack}
 		onSelect={handleTrackSelect}
 	/>
@@ -194,21 +207,15 @@
 		</div>
 	{/if}
 
-	<SponsorToast ads={adsData.ads} duration={8000} delayBetween={15000} />
+	<SponsorToast ads={sponsorAds} duration={8000} delayBetween={15000} />
 
 	<div
 		class="schedule-content"
 		role="tabpanel"
 		id="track-panel-{selectedTrack}"
-		aria-label="{scheduleData.tracks.find(t => t.id === selectedTrack)?.name} schedule"
+		aria-label="{tracks.find(t => t.id === selectedTrack)?.name} schedule"
 	>
-		{#if isLoading}
-			<!-- Loading State -->
-			<div class="loading-state">
-				<div class="loading-spinner"></div>
-				<p>Loading schedule...</p>
-			</div>
-		{:else if schedule.length === 0}
+		{#if schedule.length === 0}
 			<!-- Empty State -->
 			<div class="empty-state">
 				<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -360,32 +367,6 @@
 	.schedule-content {
 		flex: 1;
 		overflow-y: auto;
-	}
-
-	/* Loading State */
-	.loading-state {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		padding: var(--space-2xl);
-		color: var(--color-gray-600);
-	}
-
-	.loading-spinner {
-		width: 40px;
-		height: 40px;
-		border: 3px solid var(--color-gray-200);
-		border-top-color: var(--color-primary);
-		border-radius: 50%;
-		animation: spin 0.8s linear infinite;
-		margin-bottom: var(--space-md);
-	}
-
-	@keyframes spin {
-		to {
-			transform: rotate(360deg);
-		}
 	}
 
 	/* Empty State */

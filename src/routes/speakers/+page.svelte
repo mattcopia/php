@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import SpeakerCard from '$lib/components/SpeakerCard.svelte';
-	import speakersData from '$lib/data/speakers.json';
 
 	interface Social {
 		twitter?: string;
@@ -11,7 +10,7 @@
 	}
 
 	interface Speaker {
-		id: number;
+		id: string | number;
 		name: string;
 		photo?: string;
 		title?: string;
@@ -20,10 +19,12 @@
 		social?: Social;
 	}
 
-	const speakers = speakersData.speakers as Speaker[];
+	let { data } = $props();
+
+	let speakers: Speaker[] = data.speakers;
 
 	// Get unique companies for filter dropdown
-	const companies = [...new Set(speakers.map((s) => s.company).filter(Boolean))].sort() as string[];
+	let companies = $derived([...new Set(speakers.map((s) => s.company).filter(Boolean))].sort() as string[]);
 
 	let searchQuery = $state('');
 	let selectedCompany = $state('');

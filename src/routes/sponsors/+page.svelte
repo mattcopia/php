@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import SponsorCard from '$lib/components/SponsorCard.svelte';
-	import sponsorsData from '$lib/data/sponsors.json';
 
 	interface Sponsor {
-		id: number;
+		id: string | number;
 		name: string;
 		tier: string;
 		logo: string;
@@ -12,13 +11,17 @@
 		bio: string;
 	}
 
+	let { data } = $props();
+
 	const tierOrder = ['platinum', 'gold', 'silver', 'bronze'];
 
-	function groupByTier(sponsors: Sponsor[]): Map<string, Sponsor[]> {
+	let sponsors: Sponsor[] = data.sponsors;
+
+	function groupByTier(sponsorList: Sponsor[]): Map<string, Sponsor[]> {
 		const grouped = new Map<string, Sponsor[]>();
 
 		for (const tier of tierOrder) {
-			const tierSponsors = sponsors.filter((s) => s.tier === tier);
+			const tierSponsors = sponsorList.filter((s) => s.tier === tier);
 			if (tierSponsors.length > 0) {
 				grouped.set(tier, tierSponsors);
 			}
@@ -27,7 +30,7 @@
 		return grouped;
 	}
 
-	const sponsorsByTier = groupByTier(sponsorsData.sponsors as Sponsor[]);
+	let sponsorsByTier = $derived(groupByTier(sponsors));
 </script>
 
 <svelte:head>

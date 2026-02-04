@@ -142,6 +142,12 @@
 					</div>
 					<span class="sponsor-name">{currentAd.name}</span>
 					<span class="sponsor-message">{currentAd.message}</span>
+					<span class="tap-hint">
+						Tap for details
+						<svg class="tap-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+							<path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</span>
 				</div>
 
 				<button
@@ -247,12 +253,16 @@
 		width: 100%;
 		text-align: left;
 		cursor: pointer;
+		transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 	}
 
-	@media (prefers-color-scheme: dark) {
-		.toast {
-			border-color: var(--color-yellow);
-		}
+	.toast:hover {
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.toast:active {
+		transform: translateY(0);
 	}
 
 	.progress-bar {
@@ -278,6 +288,29 @@
 		display: flex;
 		flex-direction: column;
 		gap: 2px;
+	}
+
+	.tap-hint {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+		margin-top: var(--space-xs);
+		font-size: var(--text-xs);
+		color: var(--color-primary);
+		font-weight: 500;
+	}
+
+	.tap-chevron {
+		animation: bounce-right 1s ease-in-out infinite;
+	}
+
+	@keyframes bounce-right {
+		0%, 100% {
+			transform: translateX(0);
+		}
+		50% {
+			transform: translateX(3px);
+		}
 	}
 
 	.sponsor-header {
