@@ -13,7 +13,7 @@
 
 	let { data } = $props();
 
-	const tierOrder = ['platinum', 'gold', 'silver', 'bronze'];
+	const tierOrder = ['platinum', 'gold', 'silver', 'bronze', 'community-partner'];
 
 	let sponsors: Sponsor[] = data.sponsors;
 
@@ -31,6 +31,11 @@
 	}
 
 	let sponsorsByTier = $derived(groupByTier(sponsors));
+
+	function formatTierTitle(tier: string): string {
+		if (tier === 'community-partner') return 'Community Partners';
+		return tier.charAt(0).toUpperCase() + tier.slice(1) + ' Sponsors';
+	}
 </script>
 
 <svelte:head>
@@ -50,7 +55,7 @@
 			{#if sponsorsByTier.has(tier)}
 				<section class="tier-section" aria-labelledby="tier-{tier}">
 					<h2 id="tier-{tier}" class="tier-title tier-title--{tier}">
-						{tier.charAt(0).toUpperCase() + tier.slice(1)} Sponsors
+						{formatTierTitle(tier)}
 					</h2>
 					<div class="sponsors-grid sponsors-grid--{tier}">
 						{#each sponsorsByTier.get(tier) || [] as sponsor (sponsor.id)}
@@ -125,6 +130,10 @@
 		border-color: #CD7F32;
 	}
 
+	.tier-title--community-partner {
+		border-color: #018AFC;
+	}
+
 	.sponsors-grid {
 		display: grid;
 		gap: var(--space-lg);
@@ -146,6 +155,10 @@
 		grid-template-columns: 1fr;
 	}
 
+	.sponsors-grid--community-partner {
+		grid-template-columns: 1fr;
+	}
+
 	@media (min-width: 640px) {
 		.sponsors-grid--platinum {
 			grid-template-columns: repeat(2, 1fr);
@@ -160,6 +173,10 @@
 		}
 
 		.sponsors-grid--bronze {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.sponsors-grid--community-partner {
 			grid-template-columns: repeat(2, 1fr);
 		}
 	}
@@ -196,6 +213,10 @@
 		}
 
 		.sponsors-grid--bronze {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.sponsors-grid--community-partner {
 			grid-template-columns: repeat(3, 1fr);
 		}
 	}

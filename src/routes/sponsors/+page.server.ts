@@ -26,7 +26,7 @@ export const load: PageServerLoad = async ({ fetch }) => {
 					.map((s) => ({
 						id: s.id,
 						name: s.name,
-						tier: s.sponsorship_type.toLowerCase(),
+						tier: s.sponsorship_type.toLowerCase().replace(/\s+/g, '-'),
 						logo: s.logo_url,
 						website: s.website_url,
 						bio: s.bio || ''

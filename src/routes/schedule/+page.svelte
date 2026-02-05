@@ -207,7 +207,9 @@
 		</div>
 	{/if}
 
+	<!-- SponsorToast disabled for now
 	<SponsorToast ads={sponsorAds} duration={8000} delayBetween={15000} />
+	-->
 
 	<div
 		class="schedule-content"
