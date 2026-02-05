@@ -13,18 +13,19 @@
 
 	let { data } = $props();
 
-	const tierOrder = ['platinum', 'gold', 'silver', 'bronze', 'community-partner'];
+	const knownTierOrder = ['platinum', 'track', 'recruitment-sponsor', 'video-sponsor', 'delegate-lounge-sponsor', 'gold', 'silver', 'bronze', 'community-partner'];
 
 	let sponsors: Sponsor[] = data.sponsors;
 
 	function groupByTier(sponsorList: Sponsor[]): Map<string, Sponsor[]> {
 		const grouped = new Map<string, Sponsor[]>();
 
-		for (const tier of tierOrder) {
-			const tierSponsors = sponsorList.filter((s) => s.tier === tier);
-			if (tierSponsors.length > 0) {
-				grouped.set(tier, tierSponsors);
+		for (const sponsor of sponsorList) {
+			const tier = sponsor.tier;
+			if (!grouped.has(tier)) {
+				grouped.set(tier, []);
 			}
+			grouped.get(tier)!.push(sponsor);
 		}
 
 		return grouped;
@@ -32,9 +33,22 @@
 
 	let sponsorsByTier = $derived(groupByTier(sponsors));
 
+	let tierOrder = $derived.by(() => {
+		const tiers = [...sponsorsByTier.keys()];
+		return tiers.sort((a, b) => {
+			const aIndex = knownTierOrder.indexOf(a.toLowerCase());
+			const bIndex = knownTierOrder.indexOf(b.toLowerCase());
+			if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
+			if (aIndex !== -1) return -1;
+			if (bIndex !== -1) return 1;
+			return a.localeCompare(b);
+		});
+	});
+
 	function formatTierTitle(tier: string): string {
 		if (tier === 'community-partner') return 'Community Partners';
-		return tier.charAt(0).toUpperCase() + tier.slice(1) + ' Sponsors';
+		const label = tier.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+		return label + ' Sponsors';
 	}
 </script>
 
@@ -52,12 +66,13 @@
 
 	<div class="sponsors-content">
 		{#each tierOrder as tier}
+			{@const tierId = tier.replace(/\s+/g, '-')}
 			{#if sponsorsByTier.has(tier)}
-				<section class="tier-section" aria-labelledby="tier-{tier}">
-					<h2 id="tier-{tier}" class="tier-title tier-title--{tier}">
+				<section class="tier-section" aria-labelledby="tier-{tierId}">
+					<h2 id="tier-{tierId}" class="tier-title">
 						{formatTierTitle(tier)}
 					</h2>
-					<div class="sponsors-grid sponsors-grid--{tier}">
+					<div class="sponsors-grid">
 						{#each sponsorsByTier.get(tier) || [] as sponsor (sponsor.id)}
 							<SponsorCard {sponsor} />
 						{/each}
@@ -98,86 +113,42 @@
 
 	.sponsors-content {
 		padding: var(--space-lg);
-		max-width: 1200px;
+		max-width: 1400px;
 		margin: 0 auto;
 	}
 
 	.tier-section {
-		margin-bottom: var(--space-2xl);
+		margin-bottom: var(--space-xl);
 	}
 
 	.tier-title {
-		font-size: var(--text-lg);
-		font-weight: 600;
-		margin-bottom: var(--space-lg);
-		padding-bottom: var(--space-sm);
-		border-bottom: 3px solid;
-	}
-
-	.tier-title--platinum {
-		border-color: #A8A9AD;
-	}
-
-	.tier-title--gold {
-		border-color: #FFD700;
-	}
-
-	.tier-title--silver {
-		border-color: #C0C0C0;
-	}
-
-	.tier-title--bronze {
-		border-color: #CD7F32;
-	}
-
-	.tier-title--community-partner {
-		border-color: #018AFC;
+		font-size: var(--text-xs);
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-bottom: var(--space-md);
+		padding: var(--space-xs) var(--space-sm);
+		border-radius: var(--radius-sm);
+		display: inline-block;
+		background: var(--color-gray-200);
+		color: var(--color-text);
 	}
 
 	.sponsors-grid {
-		display: grid;
-		gap: var(--space-lg);
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-md);
 	}
 
-	.sponsors-grid--platinum {
-		grid-template-columns: 1fr;
-	}
-
-	.sponsors-grid--gold {
-		grid-template-columns: 1fr;
-	}
-
-	.sponsors-grid--silver {
-		grid-template-columns: 1fr;
-	}
-
-	.sponsors-grid--bronze {
-		grid-template-columns: 1fr;
-	}
-
-	.sponsors-grid--community-partner {
-		grid-template-columns: 1fr;
+	.sponsors-grid > :global(*) {
+		flex: 1 1 100%;
+		min-width: 0;
 	}
 
 	@media (min-width: 640px) {
-		.sponsors-grid--platinum {
-			grid-template-columns: repeat(2, 1fr);
-		}
-
-		.sponsors-grid--gold {
-			grid-template-columns: repeat(2, 1fr);
-		}
-
-		.sponsors-grid--silver {
-			grid-template-columns: repeat(2, 1fr);
-		}
-
-		.sponsors-grid--bronze {
-			grid-template-columns: repeat(2, 1fr);
-		}
-
-		.sponsors-grid--community-partner {
-			grid-template-columns: repeat(2, 1fr);
+		.sponsors-grid > :global(*) {
+			flex: 1 1 calc(50% - var(--space-md));
+			max-width: calc(50% - var(--space-md) / 2);
 		}
 	}
 
@@ -193,31 +164,30 @@
 		.sponsors-content {
 			padding: var(--space-xl);
 		}
-
-		.tier-title {
-			font-size: var(--text-xl);
-		}
 	}
 
 	@media (min-width: 1024px) {
-		.sponsors-grid--platinum {
-			grid-template-columns: repeat(3, 1fr);
+		.sponsors-content {
+			display: flex;
+			flex-wrap: wrap;
+			gap: var(--space-lg);
+			align-items: flex-start;
+			justify-content: center;
+			max-width: 1200px;
 		}
 
-		.sponsors-grid--gold {
-			grid-template-columns: repeat(3, 1fr);
+		.tier-section {
+			flex: 0 0 auto;
+			margin-bottom: 0;
 		}
 
-		.sponsors-grid--silver {
-			grid-template-columns: repeat(3, 1fr);
+		.sponsors-grid {
+			max-width: calc(320px * 3 + var(--space-md) * 2);
 		}
 
-		.sponsors-grid--bronze {
-			grid-template-columns: repeat(3, 1fr);
-		}
-
-		.sponsors-grid--community-partner {
-			grid-template-columns: repeat(3, 1fr);
+		.sponsors-grid > :global(*) {
+			flex: 0 0 280px;
+			max-width: 320px;
 		}
 	}
 </style>

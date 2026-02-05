@@ -1,6 +1,6 @@
 <script lang="ts">
 	interface Sponsor {
-		id: number;
+		id: number | string;
 		name: string;
 		tier: string;
 		logo: string;
@@ -13,9 +13,15 @@
 	}
 
 	let { sponsor }: Props = $props();
+
+	let expanded = $state(false);
+
+	function toggleBio() {
+		expanded = !expanded;
+	}
 </script>
 
-<article class="sponsor-card sponsor-card--{sponsor.tier}">
+<article class="sponsor-card">
 	<div class="sponsor-logo-wrapper">
 		<img
 			src={sponsor.logo}
@@ -26,12 +32,33 @@
 	</div>
 
 	<div class="sponsor-content">
-		<div class="sponsor-header">
-			<h3 class="sponsor-name">{sponsor.name}</h3>
-			<span class="sponsor-tier">{sponsor.tier}</span>
-		</div>
+		<h3 class="sponsor-name">{sponsor.name}</h3>
 
-		<p class="sponsor-bio">{sponsor.bio}</p>
+		{#if sponsor.bio}
+			<button
+				class="bio-toggle"
+				onclick={toggleBio}
+				aria-expanded={expanded}
+				aria-controls="bio-{sponsor.id}"
+			>
+				{expanded ? 'Hide bio' : 'Read bio'}
+				<svg
+					class="chevron"
+					class:rotated={expanded}
+					width="16"
+					height="16"
+					viewBox="0 0 16 16"
+					fill="none"
+					aria-hidden="true"
+				>
+					<path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</button>
+
+			{#if expanded}
+				<p id="bio-{sponsor.id}" class="sponsor-bio">{sponsor.bio}</p>
+			{/if}
+		{/if}
 
 		<a
 			href={sponsor.website}
@@ -85,55 +112,44 @@
 		padding: var(--space-lg);
 	}
 
-	.sponsor-header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: var(--space-sm);
-		margin-bottom: var(--space-sm);
-	}
-
 	.sponsor-name {
 		font-size: var(--text-lg);
 		font-weight: 600;
 		color: var(--color-text);
+		margin-bottom: var(--space-sm);
 	}
 
-	.sponsor-tier {
-		padding: var(--space-xs) var(--space-sm);
-		border-radius: var(--radius-full);
-		font-size: var(--text-xs);
-		font-weight: 600;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
+	.bio-toggle {
+		display: flex;
+		align-items: center;
+		gap: var(--space-xs);
+		padding: var(--space-xs) 0;
+		font-size: var(--text-sm);
+		font-weight: 500;
+		color: var(--color-primary);
+		margin-bottom: var(--space-sm);
 	}
 
-	.sponsor-card--platinum .sponsor-tier {
-		background: linear-gradient(135deg, #E5E4E2, #A8A9AD);
-		color: #1a1a1a;
+	.bio-toggle:hover,
+	.bio-toggle:focus-visible {
+		text-decoration: underline;
 	}
 
-	.sponsor-card--gold .sponsor-tier {
-		background: linear-gradient(135deg, #FFD700, #FFA500);
-		color: #1a1a1a;
+	.chevron {
+		transition: transform var(--transition-fast);
 	}
 
-	.sponsor-card--silver .sponsor-tier {
-		background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
-		color: #1a1a1a;
-	}
-
-	.sponsor-card--bronze .sponsor-tier {
-		background: linear-gradient(135deg, #CD7F32, #A0522D);
-		color: var(--color-text-light);
+	.chevron.rotated {
+		transform: rotate(180deg);
 	}
 
 	.sponsor-bio {
-		flex: 1;
 		font-size: var(--text-sm);
 		line-height: 1.6;
 		color: var(--color-gray-600);
 		margin-bottom: var(--space-md);
+		padding-top: var(--space-sm);
+		border-top: 1px solid var(--color-gray-200);
 	}
 
 	.sponsor-link {
@@ -144,6 +160,7 @@
 		font-weight: 500;
 		font-size: var(--text-sm);
 		transition: gap var(--transition-fast);
+		margin-top: auto;
 	}
 
 	.sponsor-link:hover,
