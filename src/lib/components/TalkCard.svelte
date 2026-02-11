@@ -16,7 +16,7 @@
 		speaker: string;
 		speakerPhoto: string;
 		synopsis: string;
-		tag: 'keynote' | 'talk' | 'tutorial';
+		tag: 'keynote' | 'talk' | 'tutorial' | 'opening' | 'closing';
 		social: Social;
 	}
 
@@ -55,12 +55,14 @@
 				</span>
 			{/if}
 		</div>
-		<img
-			src={talk.speakerPhoto}
-			alt=""
-			class="speaker-photo"
-			loading="lazy"
-		/>
+		{#if talk.speakerPhoto}
+			<img
+				src={talk.speakerPhoto}
+				alt=""
+				class="speaker-photo"
+				loading="lazy"
+			/>
+		{/if}
 	</div>
 
 	<div class="talk-content">
@@ -72,30 +74,34 @@
 				{/if}
 			</div>
 			<h3 class="talk-title">{talk.title}</h3>
-			<p class="speaker-name">{talk.speaker}</p>
+			{#if talk.speaker}
+				<p class="speaker-name">{talk.speaker}</p>
+			{/if}
 		</div>
 
-		<button
-			class="synopsis-toggle"
-			onclick={toggleExpanded}
-			aria-expanded={expanded}
-			aria-controls="synopsis-{talk.id}"
-		>
-			{expanded ? 'Hide details' : 'View details'}
-			<svg
-				class="chevron"
-				class:rotated={expanded}
-				width="16"
-				height="16"
-				viewBox="0 0 16 16"
-				fill="none"
-				aria-hidden="true"
+		{#if talk.tag !== 'opening' && talk.tag !== 'closing'}
+			<button
+				class="synopsis-toggle"
+				onclick={toggleExpanded}
+				aria-expanded={expanded}
+				aria-controls="synopsis-{talk.id}"
 			>
-				<path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-			</svg>
-		</button>
+				{expanded ? 'Hide details' : 'View details'}
+				<svg
+					class="chevron"
+					class:rotated={expanded}
+					width="16"
+					height="16"
+					viewBox="0 0 16 16"
+					fill="none"
+					aria-hidden="true"
+				>
+					<path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</button>
+		{/if}
 
-		{#if expanded}
+		{#if expanded && talk.tag !== 'opening' && talk.tag !== 'closing'}
 			<div id="synopsis-{talk.id}" class="synopsis">
 				<p>{talk.synopsis}</p>
 

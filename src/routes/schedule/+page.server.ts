@@ -39,6 +39,7 @@ interface ApiSpeaker {
 
 interface ApiSession {
 	id: string;
+	track_id: string | null;
 	title: string | null;
 	description: string | null;
 	speaker: ApiSpeaker;
@@ -66,9 +67,11 @@ function formatTime(time: string): string {
 	return time.slice(0, 5);
 }
 
-function mapSlotTypeToTag(slotType: string): 'keynote' | 'talk' | 'tutorial' {
+function mapSlotTypeToTag(slotType: string): 'keynote' | 'talk' | 'tutorial' | 'opening' | 'closing' {
 	if (slotType === 'keynote') return 'keynote';
 	if (slotType === 'tutorial') return 'tutorial';
+	if (slotType === 'opening_address') return 'opening';
+	if (slotType === 'closing_address') return 'closing';
 	return 'talk';
 }
 
@@ -82,7 +85,7 @@ function transformApiData(slots: ApiSlot[], apiTracks: ApiTrack[]) {
 		const time = formatTime(slot.start_time);
 		const duration = calculateDuration(slot.start_time, slot.end_time);
 
-		if (slot.is_break) {
+		if (slot.is_break || slot.slot_type === 'room_change') {
 			transformedBreaks.push({
 				time,
 				duration,
@@ -94,7 +97,9 @@ function transformApiData(slots: ApiSlot[], apiTracks: ApiTrack[]) {
 				const session = slot.sessions[i];
 				let trackId: string;
 
-				if (slot.track_id) {
+				if (session.track_id) {
+					trackId = session.track_id;
+				} else if (slot.track_id) {
 					trackId = slot.track_id;
 				} else if (slot.sessions.length > 1 && mainTracks.length > 0) {
 					trackId = mainTracks[i % mainTracks.length]?.id || mainTracks[0].id;
@@ -121,6 +126,21 @@ function transformApiData(slots: ApiSlot[], apiTracks: ApiTrack[]) {
 					social: {}
 				});
 			}
+		} else if (slot.title) {
+			// Slot with title but no sessions (e.g., Closing Address)
+			const trackId = slot.track_id || mainTracks[0]?.id || apiTracks[0]?.id || '';
+			transformedTalks.push({
+				id: slot.id,
+				track: trackId,
+				time,
+				duration,
+				title: slot.title,
+				speaker: '',
+				speakerPhoto: '',
+				synopsis: '',
+				tag: mapSlotTypeToTag(slot.slot_type),
+				social: {}
+			});
 		}
 	}
 

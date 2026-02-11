@@ -1,6 +1,6 @@
 <script lang="ts">
 	interface Props {
-		type: 'keynote' | 'talk' | 'tutorial';
+		type: 'keynote' | 'talk' | 'tutorial' | 'opening' | 'closing';
 	}
 
 	let { type }: Props = $props();
@@ -8,7 +8,9 @@
 	const labels: Record<string, string> = {
 		keynote: 'Keynote',
 		talk: 'Talk',
-		tutorial: 'Tutorial'
+		tutorial: 'Tutorial',
+		opening: 'Opening',
+		closing: 'Closing'
 	};
 </script>
 
@@ -38,5 +40,10 @@
 
 	.tag--tutorial {
 		background: var(--color-tag-tutorial);
+	}
+
+	.tag--opening,
+	.tag--closing {
+		background: var(--color-tag-keynote);
 	}
 </style>
